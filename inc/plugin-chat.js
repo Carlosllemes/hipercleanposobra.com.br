@@ -1,0 +1,1 @@
+/* -------- REMOVA A TAG script E COLE APENAS O CONTEÚDO DO PLUGIN -------- */

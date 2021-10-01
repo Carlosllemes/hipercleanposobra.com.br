@@ -1,0 +1,9 @@
+User-agent: *
+
+Disallow: /inc/
+
+Disallow: /imagens/servicos/thumb/
+
+
+
+Sitemap: http://www.hipercleanposobra.com.br/sitemap.xml
