@@ -105,22 +105,7 @@ $('input[name="telefone"]').mask('(99) 99999-9999');
               <input type="text" name="telefone" value="<?php
               if (isset($post['telefone'])): echo $post['telefone'];
               endif;
-              ?>" id="tel" required/>
-              <!--                 <label for="anexo">Anexo:</label>
-              <input type="file" name="anexo" id="anexo"/> -->
-              <!-- <label>Como nos conheceu?: <span>*</span> </label>
-              <select name="como_nos_conheceu" required>
-                <option value="">-- Selecione --</option>
-                <option  value="Busca do Google">Busca do Google</option>
-                <option  value="Outros Buscadores">Outros Buscadores</option>
-                <option  value="Links patrocinados">Links patrocinados</option>
-                <option  value="Outros Anúncios">Outros Anúncios</option>
-                <option  value="Facebook">Facebook</option>
-                <option  value="Twitter">Twitter</option>
-                <option  value="Google+">Google+</option>
-                <option  value="Indicação">Indicação</option>
-                <option  value="Outros">Outros</option>
-              </select> -->
+              ?>" id="tel" require>
               <label>Mensagem: <span>*</span> </label>
               <textarea name="mensagem" rows="5" required><?php
               if (isset($post['mensagem'])): echo $post['mensagem'];
