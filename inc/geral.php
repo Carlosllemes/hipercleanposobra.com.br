@@ -41,8 +41,8 @@ $urlPagina 			== "index"? $urlPagina= "" : "";
 $urlAnalytics = str_replace("https://www.", '', $url);
 $urlAnalytics = str_replace("/", '', $urlAnalytics);
 //reCaptcha do Google
-$siteKey = '6LfY76IcAAAAAAz2A96Ix3675VZOppcxwpAnKKba';
-$secretKey = '6LfY76IcAAAAACdxTAy-Jdtv5RF1hpce6dYedOXD';
+$siteKey = '6LezgvgUAAAAAO9rEU7oKe-Ut4oO8NAdHVyoLAkU';
+$secretKey = '6LezgvgUAAAAADVpagevf0aCJDvWMm9PVaGnhDUo';
 //********************COM SIG APAGAR********************
 $getURL = trim(strip_tags(filter_input(INPUT_GET, 'url', FILTER_DEFAULT)));
 $urlPagina = explode("/", $getURL);
