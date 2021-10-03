@@ -1,140 +1,140 @@
-<?php
+<?
+$dir = $_SERVER['SCRIPT_NAME']; 
+$dir = pathinfo($dir);
+$host = $_SERVER['HTTP_HOST'];
+$http = $_SERVER['REQUEST_SCHEME'];
+if ($dir["dirname"] == "/") {
+	$url = $http."://".$host."/"; 
+}else {
+	$url = $http."://".$host.$dir["dirname"]."/"; 
+}
+
 $nomeSite			= 'Hiper Clean';
 $slogan				= 'Limpeza pós Obra';
-$url 				='https://www.hipercleanposobra.com.br/';
-$auto_desc = $h1 . ' - Limpeza pós Obra em SPA HIPER CLEAN | Limpeza pós Obra em SP entende que quando vende serviços em limpeza pós-obra, está participando ativamente de um sonho de nossos clientes ';
+// $url				= 'http://localhost/www.testecarlos.com.br/';
+// $url				= 'http://mpitemporario.com.br/projetos/www.testecarlos.com.br/';
 $ddd				= '11';
-$ddd2			= '13';
-$fone[0] 			= array($ddd,'94854-9780','whatsapp');
-$fone[1] 			= array($ddd2,'98851-6171','phone');
+// $ddd2			= '19';
+$fone[0] 			= array($ddd,'1111-1111','phone');
+$fone[1] 			= array($ddd,'2222-2222','whatsapp');
 // $fone[2] 		= array($ddd,'3333-3333','whatsapp');
 // $fone[3]	 		= array($ddd,'4444-4444','phone');
 // $fone[4] 		= array($ddd,'4444-4444','phone');
-$whatsapp		= '1194854-9780';
-$emailContato		= 'contato@hipercleanposobra.com.br';
-$rua				= 'Rua João Fernandes Camisa Nova Júnior 854 ';
+//$whatsapp 		= $ddd.'11111-2222';
+$emailContato		= 'carlos.lemes@doutoresdaweb.com.br';
+$rua				= 'Rua João Fernandes Camisa Nova Júnior 854';
 $bairro				= 'Jardim São Luís';
 $cidade				= 'São Paulo';
 $UF					= 'SP';
-$cep				= 'CEP: 05844-000';
-$latitude			= '-24.160488';
-$longitude			= '-46.7529923';
-$mapa				= '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14618.160093755778!2d-46.74152004531246!3d-23.6566385358991!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce517bdefd64f9%3A0x9679cf297960140a!2sR.%20Jo%C3%A3o%20Fernandes%20Camisa%20Nova%20J%C3%BAnior%2C%20854%20-%20Jardim%20S%C3%A3o%20Lu%C3%ADs%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2005844-000!5e0!3m2!1spt-BR!2sbr!4v1589648989361!5m2!1spt-BR!2sbr" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>';
-// ENDERECO 2
-
-$rua2				= 'Rua Padre Afonso Maria Ratisbone, 4882 ';
-$bairro2				= 'Suarão';
-$cidade2				= 'Itanhaém';
-$UF2					= 'SP';
-$cep2				= 'CEP: 11740-000';
-$latitude2			= '-24.160488';
-$longitude2			= '-46.7529923';
-$mapa2				= '<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14618.160097768085!2d-46.74152!3d-23.6566385!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce517bdefd64f9%3A0x9679cf297960140a!2sR.%20Jo%C3%A3o%20Fernandes%20Camisa%20Nova%20J%C3%BAnior%2C%20854%20-%20Jardim%20S%C3%A3o%20Lu%C3%ADs%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2005844-000!5e0!3m2!1spt-BR!2sbr!4v1589649427839!5m2!1spt-BR!2sbr" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>';
-
-
-$idAnalytics		= 'UA-166881859-1';
-$senhaEmailEnvia	= '--'; // colocar senha do e-mail mkt@dominiodocliente.com.br
-$explode			= explode("/", $_SERVER['PHP_SELF']);
+$cep				= 'CEP: 04552-060';
+$latitude			= '-22.546052';
+$longitude			= '-48.635514';
+$mapa				= 'IFRAME_MAPA';
+$idCliente			= 'ID_do_cliente_no_mpi_sistema';
+$idAnalytics		= 'ID_do_Google_Analytics';
+$senhaEmailEnvia	= '102030'; // colocar senha do e-mail mkt@dominiodocliente.com.br
+$explode			= explode("/", $_SERVER['REQUEST_URI']);
 $urlPagina 			= end($explode);
 $urlPagina	 		= str_replace('.php','',$urlPagina);
 $urlPagina 			== "index"? $urlPagina= "" : "";
-$urlAnalytics = str_replace("https://www.", '', $url);
+$urlAnalytics = str_replace("http://www.", '', $url);
 $urlAnalytics = str_replace("/", '', $urlAnalytics);
 //reCaptcha do Google
-$siteKey = '6Le-iaQcAAAAACqNeQDjF0ckVXE1FX1Mz3kFlJgz';
-$secretKey = '6Le-iaQcAAAAAI7vq-tvfiO-pKkhQH9_PJ9DVcaS';
+$siteKey = '6Lfc7g8UAAAAAHlnefz4zF82BexhvMJxhzifPirv';
+$secretKey = '6Lfc7g8UAAAAAKi8al32HjrmsdwoFoG7eujNOwBI';
 //********************COM SIG APAGAR********************
-$getURL = trim(strip_tags(filter_input(INPUT_GET, 'url', FILTER_DEFAULT)));
-$urlPagina = explode("/", $getURL);
-$ContPag = sizeof($urlPagina);
-$urlPagina = $urlPagina[0];
-$urlPagina == "index" ? $urlPagina = "" : "";
+//Gerar htaccess automático
+$urlhtaccess = $url;
+$schemaReplace = strpos($urlhtaccess, 'http://www.') === false ? 'http://' : 'http://www.';
+$urlhtaccess = str_replace($schemaReplace, '', $urlhtaccess);
+$urlhtaccess = rtrim($urlhtaccess,'/');
+define('RAIZ', $url);
+define('HTACCESS', $urlhtaccess);
+include('inc/gerador-htaccess.php');
 //********************FIM SIG APAGAR********************
+
+// MENU
+
+// Menu items (link, text, hasSubmenu, NULL [FontAwesome - ex: building])
+
+$sigMenuPosition = false; //INSIRA A POSIÇÃO DO MENU DO SIG EM RELAÇÃO AOS DEMAIS ITENS (EX.: $sigMenuPosition = 3;)
+
+// CASO MENU BRASMODULOS
+// INSIRA OS ÍCONES NA ORDEM EM QUE OS ITENS DO SIG SÃO ADICIONADOS (EX.: ['home', 'cog', 'info'];)
+// Exemplo: $sigMenuIcons = ['home', 'cog', 'wrench'];
+$sigMenuIcons = [];
+// FIM CASO MENU BRASMODULOS
+
+$menu[0] = array('','Página Inicial', false, NULL);
+ $menu[1] = array('sobre-nos','Sobre Nós', false, NULL);
+ $menu[2] = array('servicos','Serviços', 'sub-menu', NULL);
+ $menu[3] = array('clientes','Clientes', false, NULL);
+ $menu[4] = array('antes-depois','Antes e Depois', false, NULL);
+ $menu[4] = array('contato','Contato', false, NULL);
+ // END MENU
 
 //Pasta de imagens, Galeria, url Facebook, etc.
 $pasta 				= 'imagens/informacoes/';
 $author = ''; // Link do perfil da empresa no g+ ou deixar em branco
 
 //Redes sociais
- $paginaFacebook		= 'Hiper-Clean-Limpeza-P%C3%B3s-Obra-726900190732414/';
-$urlInstagram		= 'https://www.instagram.com/hipercleanposobra/?hl=pt-br';
-// $urlYouTube			= 'URL_COMPLETA_YOUTUBE';
-// $urlLinkedIn			= 'URL_COMPLETA_LINKEDIN';
- // $urlTwitter			= 'https://twitter.com/FK_Consultoria';
+$paginaFacebook		= 'PAGINA_DO_FACEBOOK_DO_CLIENTE';
+$urlInstagram		= 'URL_COMPLETA_INTAGRAM';
+$urlYouTube			= 'URL_COMPLETA_YOUTUBE';
+$urlLinkedIn		= 'URL_COMPLETA_LINKEDIN';
+$urlTwitter			= 'URL_COMPLETA_TWITTER';
 
 //Breadcrumbs
-$caminho 			= '
-<div id="breadcrumb" itemscope itemtype="https://data-vocabulary.org/Breadcrumb" >
-	<a rel="home" itemprop="url" href="'.$url.'" title="Home"><span itemprop="title"><i class="fa fa-home" aria-hidden="true"></i> Home</span></a> »
-	<strong><span class="page" itemprop="title" >'.$h1.'</span></strong>
-</div>
-';
-$caminho2	= '
-<div id="breadcrumb" itemscope itemtype="https://data-vocabulary.org/Breadcrumb" >
-	<a rel="home" href="'.$url.'" title="Home" itemprop="url"><span itemprop="title"><i class="fa fa-home" aria-hidden="true"></i> Home</span></a> »
-	<div itemprop="child" itemscope itemtype="https://data-vocabulary.org/Breadcrumb">
-		<a href="'.$url.'informacoes" title="Informações" class="category" itemprop="url"><span itemprop="title"> Informações </span></a> »
-		<div itemprop="child" itemscope itemtype="https://data-vocabulary.org/Breadcrubm">
-			<strong><span class="page" itemprop="title" >'.$h1.'</span></strong>
-		</div>
-	</div>
-</div>
+$caminho            = '
+<div class="breadcrumb__container">
+                <div class="wrapper">
+                <div class="breadcrumb__row">
+                <div id="breadcrumb">
+                <div class="breadcrumb__column" itemscope itemtype="http://data-vocabulary.org/Breadcrumb" >
+                <a rel="home" itemprop="url" href="'.$url.'" title="Home">
+                <span itemprop="title"><i class="fa fa-home" aria-hidden="true"></i> Home </span>
+                </a>
+                </div>
+                <div class="breadcrumb__column" itemscope itemtype="http://data-vocabulary.org/Breadcrumb" >
+                <span itemprop="title">'.$h1.'</span>
+                </div>
+                </div>
+                <h1>'.$h1.'</h1>
+                </div>
+                </div>
+                </div>
 ';
 
+// mpi breadcrumb
+$caminho2            = '
+<div class="breadcrumb__container">
+                <div class="wrapper">
+                <div class="breadcrumb__row">
+                <div id="breadcrumb">
+                <div class="breadcrumb__column" itemscope itemtype="http://data-vocabulary.org/Breadcrumb" >
+                <a rel="home" itemprop="url" href="'.$url.'" title="Home">
+                <span itemprop="title"><i class="fa fa-home" aria-hidden="true"></i> Home </span>
+                </a>
+                </div>
+                <div class="breadcrumb__column" itemscope itemtype="http://data-vocabulary.org/Breadcrumb" >
+                <a rel="home" itemprop="url" href="'.$url.'servicos" title="Serviços">
+                <span itemprop="title">Serviços</span>
+                </a>
+                </div>
+                <div class="breadcrumb__column" itemscope itemtype="http://data-vocabulary.org/Breadcrumb" >
+                <span itemprop="title">'.$h1.'</span>
+                </div>
+                </div>
+                <h1>'.$h1.'</h1>
+                </div>
+                </div>
+                </div>
+';
+// end mpi breadcrumb
 
 $prepos = array(' a ',' á ',' à ',' ante ',' até ',' após ',' de ',' desde ',' em ',' entre ',' com ',' para ',' por ',' perante ',' sem ',' sob ',' sobre ',' na ',' no ',' e ',' do ',' da ',' ','(',')','\'','"','.','/',':',' | ', ',, ');
-$creditos			= 'LGF';
-$siteCreditos		= 'www.satisfacaojhonymc.com.br';
-$caminhoBread 			= '
-<div class="title-breadcrumb">
-	<div class="wrapper">
-		<div id="breadcrumb" itemscope itemtype="https://data-vocabulary.org/Breadcrumb" >
-			<a rel="home" itemprop="url" href="'.$url.'" title="Home"><span itemprop="title"><i class="fa fa-home" aria-hidden="true"></i> Home</span></a> »
-			<strong><span class="page" itemprop="title" >'.$h1.'</span></strong>
-		</div>
-		<h1>'.$h1.'</h1>
-	</div>
-</div>
-';
-$caminhoBreadServicos	= '
-<div class="title-breadcrumb">
-	<div class="wrapper">
-		<div id="breadcrumb" itemscope itemtype="https://data-vocabulary.org/Breadcrumb" >
-			<a rel="home" href="'.$url.'" title="Home" itemprop="url"><span itemprop="title"><i class="fa fa-home" aria-hidden="true"></i> Home</span></a> »
-			<div itemprop="child" itemscope itemtype="https://data-vocabulary.org/Breadcrumb">
-				<a href="'.$url.'servicos" title="Serviços" class="category" itemprop="url"><span itemprop="title"> Serviços </span></a> »
-				<div itemprop="child" itemscope itemtype="https://data-vocabulary.org/Breadcrumb">
-					<strong><span class="page" itemprop="title" >'.$h1.'</span></strong>
-				</div>
-			</div>
-		</div>
-		<h1>'.$h1.'</h1>
-	</div>
-</div>
-';
+$creditos			= 'Doutores da Web - Marketing Digital';
+$siteCreditos		= 'www.doutoresdaweb.com.br';
 
-
-
-
-$caminhoBread2	= '
-<div class="title-breadcrumb">
-	<div class="wrapper">
-		<div id="breadcrumb" itemscope itemtype="https://data-vocabulary.org/Breadcrumb" >
-			<a rel="home" href="'.$url.'" title="Home" itemprop="url"><span itemprop="title"><i class="fa fa-home" aria-hidden="true"></i> Home</span></a> »
-			<div itemprop="child" itemscope itemtype="https://data-vocabulary.org/Breadcrumb">
-				<a href="'.$url.'informacoes" title="Informações" class="category" itemprop="url"><span itemprop="title"> Informações </span></a> »
-				<div itemprop="child" itemscope itemtype="https://data-vocabulary.org/Breadcrumb">
-					<strong><span class="page" itemprop="title" >'.$h1.'</span></strong>
-				</div>
-			</div>
-		</div>
-		<h1>'.$h1.'</h1>
-	</div>
-</div>
-';
-
-
-
-
+$isMobile =  preg_match("/(android|webos|avantgo|iphone|ipad|ipod|blackberry|iemobile|bolt|boost|cricket|docomo|fone|hiptop|mini|opera mini|kitkat|mobi|palm|phone|pie|tablet|up\.browser|up\.link|webos|wos)/i", $_SERVER["HTTP_USER_AGENT"]);
 ?>
-

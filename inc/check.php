@@ -11,5 +11,4 @@
  } if ($erro == '') { } else{ echo "<script> alert('Favor alterar as seguintes variáveis:\\n$erro');
  </script>";
  } include 'inc/check-description.php';
- 
-?>
+ ?>

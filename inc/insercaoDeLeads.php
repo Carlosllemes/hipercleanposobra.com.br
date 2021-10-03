@@ -27,7 +27,7 @@ function insereLeadNoSistema($cliente_id = null, $nome = null, $email = null, $t
   //Envia os dados via cURL
   $ch = curl_init();
   curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-  curl_setopt($ch, CURLOPT_URL, 'carlos.lemesxbx@gmail.com');
+  curl_setopt($ch, CURLOPT_URL, 'http://doutor.mpisistema.com.br/_cdn/remoto/leads.php');
   curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
   curl_setopt($ch, CURLOPT_POST, true);
   curl_setopt($ch, CURLOPT_POSTFIELDS, $lead);
@@ -54,8 +54,8 @@ function insereLeadNoSistema($cliente_id = null, $nome = null, $email = null, $t
     $headers = "MIME-Version: 1.0 \r\n"
         . "Content-type: text/html; charset=utf-8 \r\n"
         . "To: {$emails} \r\n"
-        . "From: carlos.lemesxbx@gmail.com \r\n"
-        . "Reply-To: carlos.lemesxbx@gmail.com \r\n"
+        . "From: naoresponder@doutoresdaweb.com.br \r\n"
+        . "Reply-To: naoresponder@doutoresdaweb.com.br \r\n"
         . "Date: " . date("Y/m/d H:i:s") . " \r\n"
         . "X-Mailer: PHP/" . phpversion() . " \r\n";
 

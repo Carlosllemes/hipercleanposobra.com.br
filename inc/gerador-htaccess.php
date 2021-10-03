@@ -242,6 +242,8 @@ if (!file_exists('.htaccess')):
       ExpiresByType font/opentype 'access plus 1 month'
 
       ExpiresByType font/woff 'access plus 1 month'
+      
+      ExpiresByType font/woff2 'access plus 1 month'
 
       ExpiresByType image/svg+xml 'access plus 1 month'
 

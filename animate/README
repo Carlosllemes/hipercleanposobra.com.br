@@ -1,0 +1,23 @@
+********** fazer chamada do css na head
+//localhost
+<link rel='stylesheet' type='text/css' href='animate/animate.min.css'>
+
+//temporario
+<?include ($_SERVER['RAIZ']."animate/animate.min.css");?>
+
+
+********** fazer chamada do js no footer
+<script>
+  <?include ('animate/animate.min.js');?>
+</script>
+
+
+********** como usar 
+// definir classe com os seguintes valores: scrollanimation animated tipoAnimação
+// Exemplos:
+
+<div class="scrollanimation animated fadeIn"></div>
+<div class="scrollanimation animated fadeInDown"></div>
+<div class="scrollanimation animated fadeInLeft"></div>
+<div class="scrollanimation animated fadeInRight"></div>
+<div class="scrollanimation animated fadeInUp"></div>

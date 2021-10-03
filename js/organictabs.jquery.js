@@ -1,11 +1,1 @@
-(function($){$.organicTabs=function(el,options){var base=this;base.$el=$(el);base.$nav=base.$el.find(".nav");base.init=function(){base.options=$.extend({},$.organicTabs.defaultOptions,options);$(".hide").css({"position":"relative","top":0,"left":0,"display":"none"});base.$nav.delegate("li > a","click",function(){var curList=base.$el.find("a.current").attr("href").substring(1),$newList=$(this),listID=$newList.attr("href").substring(1),$allListWrap=base.$el.find(".list-wrap"),curListHeight=$allListWrap.height();$allListWrap.height(curListHeight);if((listID!=curList)&&(base.$el.find(":animated").length==0)){base.$el.find("#"+curList).fadeOut(base.options.speed,function(){base.$el.find("#"+listID).fadeIn(base.options.speed);var newHeight=base.$el.find("#"+listID).height();$allListWrap.animate({height:newHeight});base.$el.find(".nav li a").removeClass("current");$newList.addClass("current")})}return false})};base.init()};$.organicTabs.defaultOptions={"speed":300};$.fn.organicTabs=function(options){return this.each(function(){(new $.organicTabs(this,options))})}})(jQuery);
-
-$(function() {
-$("#servicosTabs").organicTabs();
-$("#servicosTabsDois").organicTabs();
-$("#descricao-produto").organicTabs();
-$("#descricao-produto-vertical").organicTabs();
-});
-
-
-
+$(document).ready(function(){0==$('.organictabs__menu [data-tab="default"]').length&&$(".organictabs__content [data-tab]:not(:first-child)").each(function(){$(this).hide()}),$(".organictabs__menu [data-tab]").on("click",function(){let t=$(this).attr("data-tab");$(this).hasClass("active-tab")||($(".organictabs__menu .active-tab").removeClass("active-tab"),$(this).addClass("active-tab"),"default"==$(this).attr("data-tab")?$(".organictabs__content [data-tab]").each(function(){$(this).show()}):$(".organictabs__content [data-tab]").each(function(){$(this).attr("data-tab")!=t?$(this).hide():$(this).show()}))})});

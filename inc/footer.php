@@ -1,71 +1,74 @@
+<?php include('contato-inc.php')?>
 <div class="clear"></div>
-<footer>
-	<div class="wrapper">
-		<div class="col-4">
-			<div class="contact-footer">
-				<h2>Contatos</h2>
-				<h3>Unidade 1 - São Paulo</h3>
-				<address>
-					<span><?=$nomeSite." - ".$slogan?></span>
-					<?=$rua." - ".$bairro?> <br>
-					<?=$cidade." - ".$UF." - ".$cep?>
-				</address>
-				<a target="_blank" title="Whatsapp <?=$nomeSite?>" class="whatsapp whats-desk" href="https://web.whatsapp.com/send?phone=55<?=$whatsapp?>&text=<?=rawurlencode("Olá! Gostaria de mais informações sobre as ofertas da ".$nomeSite." - ".$slogan)?>"><a rel="nofollow" href="mailto:<?=$emailContato?>" target="_blank" title="Envie um E-mail"><i class="fa fa-whatsapp"></i> (11) 94854-9780</a>
-
-				<br>
-<hr>
-
-				<h3>Unidade 2 - Itanhaém </h3>
-				<address>
-					<span><?=$nomeSite." - ".$slogan?></span>
-					<?=$rua2." - ".$bairro2?> <br>
-					<?=$cidade2." - ".$UF2." - ".$cep2?>
-				</address>
-				<a target="_blank" title="Whatsapp <?=$nomeSite?>" class="whatsapp whats-desk" href="https://web.whatsapp.com/send?phone=55<?=$whatsapp?>&text=<?=rawurlencode("Olá! Gostaria de mais informações sobre as ofertas da ".$nomeSite." - ".$slogan)?>"><a rel="nofollow" href="mailto:<?=$emailContato?>" target="_blank" title="Envie um E-mail"><i class="fa fa-whatsapp"></i> (13) 98851-6171</a>
-
-				<br>
-			</div>
-		</div>
-		<div class="col-6">
-			<div class="menu-footer">
-				<nav>
-					<ul>
-						<li><a href="<?=$url;?>pagina-inicial" title="Página Inicial">Página Inicial</a></li>
-						<li><a href="<?=$url;?>sobre-nos" title="Sobre Nós">Sobre Nós</a></li>
-						<li><a href="<?=$url;?>servicos" title="Serviços">Serviços</a></li>
-						<li><a href="<?=$url;?>clientes" title="Clientes">Clientes</a></li>
-						<li><a href="<?=$url;?>antes-depois" title="Antes e Depois">Antes e Depois</a></li>
-						<!-- <li><a href="<?=$url;?>portfolio" title="Portfólio">Portfólio</a></li> -->
-						<!-- <li><a href="<?=$url;?>blog" title="Blog">Blog</a></li> -->
-						<!-- <li><a href="<?=$url;?>unidades" title="Unidades">Unidades</a></li> -->
-						<li><a href="<?=$url;?>contato" title="Contato">Contato</a></li>
-						<li><a href="<?=$url?>mapa-site" title="Mapa do site <?=$nomeSite?>">Mapa do site</a></li>
-					</ul>
-				</nav>
-			</div>
-		</div>
-		<?php include('inc/canais.php');?>
-		<br class="clear">
-	</div>
-</footer>
-<div class="copyright-footer">
-	<div class="wrapper">
-		Copyright © 2017 - Hiper Clean - Todos os Direitos Reservados | Criado por Robert Frost
-		
-	</div>
-</div>
-
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-166881859-1"></script>
+    <footer>
+        <div class="wrapper">
+            <div class="grid">
+                <div class="footer__institucional col-4">
+                    <a href="<?=$url?>" title="<?=$nomeSite." ".$Slogan?>">
+                        <img src="<?=$url?>imagens/logo-branco.png" alt="<?=$nomeSite." ".$Slogan?>" title="<?=$nomeSite." ".$Slogan?>" class="picture-center" width="220">
+                    </a>
+                    <p class="text-center small">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur dolor error facere excepturi beatae, maiores. Suscipit dolor eveniet iusto culpa unde quos, voluptates sapiente ipsum perspiciatis similique possimus molestiae modi?</p>
+                </div>
+                <div class="footer__menu col-4">
+                    <nav>
+                        <ul>
+                            <?php
+                            foreach ($menu as $key => $value){
+                                if($sigMenuPosition !== false && $key == $sigMenuPosition) include('inc/menu-footer-sig.php');
+                                echo '
+                                <li>
+                                <a rel="nofollow" href="'.(strpos($value[0], 'http') !== false ? $value[0] : $url.$value[0]).'" title="'.($value[1] == 'Home' ? 'Página inicial' : $value[1]).'" '.(strpos($value[0], 'http') !== false ? 'target="_blank"' : "").'>'.$value[1].'</a>
+                                </li>
+                                ';
+                            }
+                            
+                            ?>
+                            <li><a href="<?=$url?>mapa-site" title="Mapa do site <?=$nomeSite?>">Mapa do site</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="footer__contact col-4">
+                    <address>
+                        <strong class="d-block"><?=$nomeSite?></strong>
+                        <span class="d-block"><i class="fa fa-map-marker" aria-hidden="true"></i> <?=$rua." - ".$bairro?> <br> <?=$cidade."/".$UF." - ".$cep?></span>
+                        <?php
+                        foreach ($fone as $key => $value) {?>
+                            <a class="d-block" rel="nofollow" title="Clique e ligue" href="tel:<?=$value[0].$value[1]?>">
+                                <i class="fa fa-<?=$value[2]?>" aria-hidden="true"></i>
+                                <?=$value[0].$value[1]?>
+                            </a>
+                            <?
+                        }
+                        ?>
+                        <a class="d-block" rel="nofollow" href="mailto:<?=$emailContato?>" target="_blank" title="Envie um E-mail"><i class="fa fa-envelope" aria-hidden="true"></i> <?=$emailContato?></a>
+                        
+                        <? include('inc/canais.php');?>
+                    </address>
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </footer>
+    <div class="copyright-footer">
+        <div class="wrapper">
+            Copyright © <?=$nomeSite?>. (Lei 9610 de 19/02/1998)
+        </div>
+    </div>
+    <?php if(isset($whatsapp) && !empty($whatsapp)) { include 'botao-whatsapp.php';}
+    
+    ?>
+    <?include('inc/LAB.php');?>
+<script src='https://www.google.com/recaptcha/api.js'></script>
+<script src="<?=$url?>js/sweetalert/js/sweetalert.min.js"></script>
+<script src="<?=$url?>js/maskinput.js"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-166881859-1');
+    <?include ('js/fake-select.js');?>
 </script>
-
-<?php if(isset($whatsapp) && !empty($whatsapp)) { include 'botao-whatsapp.php';} ?>
-
-
-
+<script>
+    $(function () {
+        $('input[name="telefone"]').mask('(00) 90000-0000');
+        $('input[name="CEP"]').mask('00000-000');
+        $('input[name="CPF"]').mask('000.000.000-00');
+        $('input[name="CNPJ"]').mask('00.000.000/0000-00');
+    });
+</script>

@@ -1,3 +1,5 @@
+
+
     # Definindo o idioma. Recursos como x-webkit-speech
 
     DefaultLanguage pt-BR
@@ -29,14 +31,14 @@
     <IfModule mod_rewrite.c>
 
       RewriteEngine On
-    RewriteCond %{HTTPS} !=on
+    #RewriteCond %{HTTPS} !=on
     #RewriteRule ^.*$ https://%{SERVER_NAME}%{REQUEST_URI} [R,L]
 
-        RewriteCond %{http_host} ^franpar.com.br [NC]
+        RewriteCond %{http_host} ^localhost/sitebase_templateshop [NC]
 
-        RewriteRule ^(.*)$ https://www.hipercleanposobra.com.br/$1 [r=301,NC]
+        RewriteRule ^(.*)$ http://localhost/sitebase_templateshop/$1 [r=301,NC]
 
-        RewriteRule ^index.php$ https://www.hipercleanposobra.com.br/ [r=301,NC,L]
+        RewriteRule ^index.php$ http://localhost/sitebase_templateshop/ [r=301,NC,L]
 
 
 
@@ -50,7 +52,7 @@
 
         #redirects 
 
-        #redirect 301 /produto https://www.hipercleanposobra.com.br/produtos
+        #redirect 301 /produto http://localhost/sitebase_templateshop/produtos
         
 #RewriteCond %{REQUEST_URI} ^(.*)colar_link_antigo(.*)$
 #RewriteRule ^(.*) novo_dominio [L,R=301,QSD]
@@ -63,13 +65,13 @@
 
     # Exibe página não encontrada se url não existir
 
-    errordocument 404 https://www.hipercleanposobra.com.br/404
+    errordocument 404 http://localhost/sitebase_templateshop/404
 
 
 
     # Redireciona erro 403 para página 404
 
-    errordocument 403 https://www.hipercleanposobra.com.br/404
+    errordocument 403 http://localhost/sitebase_templateshop/404
 
 
 
@@ -228,6 +230,8 @@
       ExpiresByType font/opentype "access plus 1 month"
 
       ExpiresByType font/woff "access plus 1 month"
+      
+      ExpiresByType font/woff2 "access plus 1 month"
 
       ExpiresByType image/svg+xml "access plus 1 month"
 

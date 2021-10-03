@@ -77,7 +77,7 @@ if (isset($post['g-recaptcha-response']) && !empty($post['g-recaptcha-response']
     if (isset($file) && !empty($file)):
       $mail->AddAttachment($file['tmp_name'], $file['name']); // Anexo
     endif;
-    $mail->AddCC('carlos.lemesxbx@gmail.com', 'HiperClean'); // Copia
+    //$mail->AddCC('adm@site.com.br', 'Teste'); // Copia
     //$mail->AddBCC('fulano@dominio.com.br', 'Fulano da Silva'); // Cópia Oculta
     $mail->AddReplyTo($post['email'], $post['nome']); // Reply-to
     $mail->Subject = $EMPRESA . ': Contato pelo site'; // Assunto da mensagem
